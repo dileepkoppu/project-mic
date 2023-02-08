@@ -1,0 +1,12 @@
+[
+    {
+        "id":"admin",
+        "email":"admin@gmail.com",
+        "role_ids":"superuser",
+        "firstName":"admin",
+        "lastName":"sai",
+        "mobile":"9381522269",
+        "password":"Admin@123",
+        "conformPassword":"Admin@123"
+    }
+]
