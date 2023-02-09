@@ -1,11 +1,6 @@
 const mongoose = require('mongoose')
 const schema =mongoose.Schema
 
-// var validateEmail = function(email) {
-//     var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//     return re.test(email)
-// };
-
 
 const user_schema = new schema({
     "id":{
@@ -43,7 +38,21 @@ const user_schema = new schema({
         trim: true,
         minLength:3
     },
+    "totalRounds":{
+        type:Number,
+        required:true,
+        trim: true
+    },
+    "currentRound":{
+        type:Number,
+        required:true,
+        trim: true
+    },
+    "status":{
+        type:Boolean,
+        required:true
+    }
 })
 
-record=mongoose.model('Record',user_schema)
-module.exports = record
+studentc=mongoose.model('StudentC',user_schema)
+module.exports = studentc
