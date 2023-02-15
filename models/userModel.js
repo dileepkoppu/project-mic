@@ -58,5 +58,7 @@ const user_schema = new schema({
     "authToken":String,
 })
 
+
+
 user=mongoose.model('User',user_schema)
 module.exports = user
