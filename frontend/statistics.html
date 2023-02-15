@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>statistics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+    
+<!--footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Table bootstrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    table * {
+        white-space: nowrap;
+    z-index: 5;
+        
+    }
+    body {
+        padding-top: 10%;
+    }
+    * {
+	font-family: 'Montserrat', sans-serif;
+}
+.carousel-item {
+	height: 100vh;
+	min-height: 300px;
+}
+.carousel-caption {
+	bottom: 220px;
+	z-index: 2;
+}
+.carousel-caption h5 {
+	font-size: 45px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 25px;
+}
+.carousel-caption p {
+	width: 60%;
+	margin: auto;
+	font-size: 18px;
+	line-height: 1.9;
+}
+.carousel-caption a {
+	text-transform: uppercase;
+	text-decoration: none;
+	background: crimson;
+	padding: 5px 20px;
+	display: inline-block;
+	color: #fff;
+	margin-top: 15px;
+	border-radius: 5px;
+}
+.carousel-inner:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: 1;
+}
+.navbar .getstarted {
+	background: rgb(74, 123, 246);
+	margin: 3px;
+	border-radius: 4px;
+	font-weight: 400;
+	color: #fff;
+	text-decoration: none;
+	padding: .6rem 1rem;
+	line-height: 2;
+}
+.navbar-custom {
+    background-color: white;
+}
+.navbar-nav a {
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.navbar-light .navbar-brand {
+	color: #000;
+	font-size: 25px;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: 2px;
+}
+.navbar-light .navbar-brand img {
+	width: 200px;
+	height: 50px;
+	left: 3%;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+	color: #000;
+}
+.navbar-light .navbar-nav .nav-link {
+	color: #000;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+	color: #000;
+}
+.w-100 {
+	height: 100vh;
+}
+.navbar-toggler {
+	padding: 1px 5px;
+	font-size: 18px;
+	line-height: 0.3;
+	background: #fff;
+}
+@media only screen and (max-width: 767px) {
+	.navbar-nav {
+		text-align: center;
+	}
+	.carousel-caption {
+		bottom: 165px;
+	}
+	.carousel-caption h5 {
+		font-size: 17px;
+	}
+	.carousel-caption a {
+		padding: 10px 15px;
+		font-size: 15px;
+	}
+	.navbar .getstarted {
+		display: none;
+	}
+}
+
+
+
+
+  .navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 10px 12px;
+	text-decoration: none;
+  }
+  .dropdown .dropbtn {
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: black;
+	padding: 10px 16px;
+	background-color: inherit;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: rgb(249, 245, 245);
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  .dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+	background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+
+
+/*footer */
+footer {
+	background: #101010;
+	padding: 86px 0;
+}
+.single-box p {
+	color: #fff;
+	line-height: 1.9;
+	text-align: center;
+}
+.single-box h2 {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+}
+.socials i {
+	font-size: 18px;
+	margin-right: 15px;
+}
+@media (max-width: 767px) {
+	.single-box {
+		margin-bottom: 50px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.single-box {
+		margin-bottom: 50px;
+	}
+}
+
+
+/*statistics download button */
+.statisticsdbtn {
+	background-color: DodgerBlue;
+	border: none;
+	color: white;
+	padding: 12px 30px;
+	cursor: pointer;
+	font-size: 20px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	
+  }
+  .statisticsdbtn:hover {
+	background-color: RoyalBlue;
+  }
+
+
+  /*statistics filters */
+  
+  .containermulti{
+    max-width: 19%;
+    margin: 15px;
+    width: 100%;
+    float: left;
+    
+	
+}
+.select-btn{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	
+}
+.select-btn .btn-text{
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+	
+}
+.select-btn .arrow-dwn{
+    display: flex;
+    height: 21px;
+    width: 21px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #6e93f7;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+	
+}
+.select-btn.open .arrow-dwn{
+    transform: rotate(-180deg);
+	
+}
+.list-items{
+    position: relative;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    position: absolute;
+    z-index: 10;
+	
+}
+.select-btn.open ~ .list-items{
+    display: block;
+	
+}
+.list-items .item{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 15px;
+    border-radius: 8px;
+	
+}
+.list-items .item:hover{
+    background-color: #e7edfe;
+}
+.item .item-text{
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+.item .checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid #c0c0c0;
+    transition: all 0.3s ease-in-out;
+}
+.item.checked1 .checkbox{
+    background-color: #4070f4;
+    border-color: #4070f4;
+}
+.item.checked2 .checkbox{
+    background-color: #4070f4;
+    border-color: #4070f4;
+}
+.item.checked3 .checkbox{
+    background-color: #4070f4;
+    border-color: #4070f4;
+}
+.item.checked4 .checkbox{
+    background-color: #4070f4;
+    border-color: #4070f4;
+}
+.checkbox .check-icon{
+    color: #fff;
+    font-size: 11px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+.item.checked1 .check-icon{
+    transform: scale(1);
+}
+.item.checked2 .check-icon{
+    transform: scale(1);
+}
+.item.checked3 .check-icon{
+    transform: scale(1);
+}
+.item.checked4 .check-icon{
+    transform: scale(1);
+}
+
+/* submit button */
+.center {
+    display: flex;
+  }
+  .center button{
+	color: #fff;
+    margin-top: 10%;
+    margin-left: 10%;
+  padding: 4% 4% ;
+  background: rgb(74, 123, 246);
+  border-radius: 4px;
+  border-color: #4070f4;
+  
+  }
+</style> 
+ </head>
+<body >
+    <!--nav bar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img alt="..."src="http://drive.google.com/uc?export=view&id=1Yi2VU0BiA9Vfu-EDgEoGerM3JPnCsLre"></a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="getstarted" href="index.html">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="getstarted" href="index.html" >Creat User</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--filter-->
+<div class="container1 containermulti">
+    <div class="select-btn1 select-btn">
+        <span class="btn-text1 btn-text">Branch</span>
+        <span class="arrow-dwn">
+            <i class="fa-solid fa-chevron-down"></i>
+        </span>
+    </div>
+
+    <ul class="list-items">
+        <li class="item1 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">CSE</span>
+        </li>
+        <li class="item1 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">ECE</span>
+        </li>
+        <li class="item1 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">IT</span>
+        </li>
+        <li class="item1 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">MECH</span>
+        </li>
+        <li class="item1 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">CIVIL</span>
+        </li>
+        <li class="item1 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">MBA</span>
+        </li>
+    </ul>
+</div>
+
+<!--Another drop down menu -->
+
+<div class="container2 containermulti">
+    <div class="select-btn2 select-btn">
+        <span class="btn-text2 btn-text">COMPANY</span>
+        <span class="arrow-dwn">
+            <i class="fa-solid fa-chevron-down"></i>
+        </span>
+    </div>
+
+    <ul class="list-items">
+        <li class="item2 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">INFOSYS</span>
+        </li>
+        <li class="item2 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">CTS</span>
+        </li>
+        <li class="item2 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">ACCENTURE</span>
+        </li>
+        <li class="item2 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">AMAZON</span>
+        </li>
+        <li class="item2 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">TCS</span>
+        </li>
+        <li class="item2 item">
+            <span class="checkbox">
+                <i class="fa-solid fa-check check-icon"></i>
+            </span>
+            <span class="item-text">WIPRO</span>
+        </li>
+    </ul>
+</div>
+
+<!--3rd dropdown-->
+
+<div class="container3 containermulti">
+<div class="select-btn3 select-btn">
+<span class="btn-text3 btn-text">TOTAL ROUNDS</span>
+<span class="arrow-dwn">
+    <i class="fa-solid fa-chevron-down"></i>
+</span>
+</div>
+
+<ul class="list-items">
+<li class="item3 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">1</span>
+</li>
+<li class="item3 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">2</span>
+</li>
+<li class="item3 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">3</span>
+</li>
+<li class="item3 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">4</span>
+</li>
+<li class="item3 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">5</span>
+</li>
+<li class="item3 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">ABOVE 5</span>
+</li>
+</ul>
+</div>
+
+
+<!--4th dropdown-->
+<div class="container4 containermulti">
+<div class="select-btn4 select-btn">
+<span class="btn-text4 btn-text">QUALIFIED ROUNDS</span>
+<span class="arrow-dwn">
+    <i class="fa-solid fa-chevron-down"></i>
+</span>
+</div>
+
+<ul class="list-items">
+<li class="item4 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">1</span>
+</li>
+<li class="item4 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">2</span>
+</li>
+<li class="item4 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">3</span>
+</li>
+<li class="item4 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">4</span>
+</li>
+<li class="item4 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">5</span>
+</li>
+<li class="item4 item">
+    <span class="checkbox">
+        <i class="fa-solid fa-check check-icon"></i>
+    </span>
+    <span class="item-text">ABOVE 5</span>
+</li>
+</ul>
+
+</div>
+<!--submit button-->
+<div class="center">
+<button>SUBMIT</button>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- JavaScript -->
+<script>
+    const selectBtn1 = document.querySelector(".select-btn1"),
+      items1 = document.querySelectorAll(".item1");
+
+selectBtn1.addEventListener("click", () => {
+    selectBtn1.classList.toggle("open");
+});
+
+items1.forEach(item1 => {
+    item1.addEventListener("click", () => {
+
+        item1.classList.toggle("checked1");
+
+        let checked1 = document.querySelectorAll(".checked1"),
+            btnText1 = document.querySelector(".btn-text1");
+
+            if(checked1 && checked1.length > 0){
+                btnText1.innerText = `${checked1.length} Selected`;
+            }else{
+                btnText1.innerText = "BRANCH";
+            }
+    });
+})
+
+
+const selectBtn2 = document.querySelector(".select-btn2"),
+      items2 = document.querySelectorAll(".item2");
+
+selectBtn2.addEventListener("click", () => {
+    selectBtn2.classList.toggle("open");
+});
+
+items2.forEach(item2 => {
+    item2.addEventListener("click", () => {
+        item2.classList.toggle("checked2");
+
+        let checked2 = document.querySelectorAll(".checked2"),
+            btnText2 = document.querySelector(".btn-text2");
+
+            if(checked2 && checked2.length > 0){
+                btnText2.innerText = `${checked2.length} Selected`;
+            }else{
+                btnText2.innerText = "COMPANY";
+            }
+    });
+})
+
+
+
+const selectBtn3 = document.querySelector(".select-btn3"),
+      items3 = document.querySelectorAll(".item3");
+
+selectBtn3.addEventListener("click", () => {
+    selectBtn3.classList.toggle("open");
+});
+
+items3.forEach(item3 => {
+    item3.addEventListener("click", () => {
+        item3.classList.toggle("checked3");
+
+        let checked3 = document.querySelectorAll(".checked3"),
+            btnText3 = document.querySelector(".btn-text3");
+
+            if(checked3 && checked3.length > 0){
+                btnText3.innerText = `${checked3.length} Selected`;
+            }else{
+                btnText3.innerText = "TOTAL ROUNDS";
+            }
+    });
+})
+
+
+const selectBtn4 = document.querySelector(".select-btn4"),
+      items4 = document.querySelectorAll(".item4");
+selectBtn4.addEventListener("click", () => {
+    selectBtn4.classList.toggle("open");
+});
+
+items4.forEach(item4 => {
+    item4.addEventListener("click", () => {
+        item4.classList.toggle("checked4");
+
+        let checked4 = document.querySelectorAll(".checked4"),
+            btnText4 = document.querySelector(".btn-text4");
+
+            if(checked4 && checked4.length > 0){
+                btnText4.innerText = `${checked4.length} Selected`;
+            }else{
+                btnText4.innerText = "QUALIFIED ROUNDS";
+            }
+    });
+})
+
+</script>
+
+
+ <!--table-->
+
+<div class="m-4">
+    <div class="table-responsive"> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Redg no</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>company</th>
+                    <th>Total Rounds</th>
+                    <th>Qualified Rounds</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>19H71A0560</td>
+                    <td>Alekhya Koppu</td>
+                    <td>CSE</td>
+                    <td>TCS</td>
+                    <td>5</td>
+                    <td>3</td>
+                    
+                </tr>
+                <tr>
+                    <td>19H71A0560</td>
+                    <td>Alekhya Koppu</td>
+                    <td>CSE</td>
+                    <td>TCS</td>
+                    <td>5</td>
+                    <td>3</td>
+                    
+                </tr>
+                <tr>
+                    <td>19H71A0560</td>
+                    <td>Alekhya Koppu</td>
+                    <td>CSE</td>
+                    <td>TCS</td>
+                    <td>5</td>
+                    <td>3</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+</div>
+
+<!--download button-->
+<button class="statisticsdbtn"><i class="fa fa-download"></i> Download</button>
+
+
+
+ <!--footer-->
+
+<footer>
+        
+    <div class="single-box">
+        <h2>Get In Touch</h2>
+        <p>NH 9, Vijayawada - Hyderabad Highway, Kanchikacherla, Andhra Pradesh 521180</p>
+        <p>Mobile : +91 7382616824, 9491457799</p>
+        <p>Email : office@mictech.ac.in</p>
+        <p>Land Line : 08678-273535, 273569</p>
+        <h2>Follow us on</h2>
+        <p class="socials">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-dribbble"></i>
+            <i class="fa fa-pinterest"></i>
+            <i class="fa fa-twitter"></i>
+        </p>
+    </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.min.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script> 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js">
+</script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js">
+</script>
+</body>
+</html>
