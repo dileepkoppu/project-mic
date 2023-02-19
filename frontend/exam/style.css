@@ -1,0 +1,141 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,500;1,500&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@300&family=Roboto:ital,wght@0,500;1,500&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,800&family=Roboto:ital,wght@0,500;1,500&display=swap');
+
+* {
+    /*font-family: 'Poppins', sans-serif;
+
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;*/
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.f-2 {
+    font-size: 1.3rem;
+}
+
+.img-res {
+    width: 250px;
+}
+
+.mar {
+    margin-top: 40px;
+}
+
+.uName{
+    transition: 500ms;
+    animation: color-change-name 10s infinite;
+}
+
+#pharmacy:hover{
+    cursor: pointer;
+}
+
+#hardy:hover{
+    cursor: pointer;
+}
+
+#nic:hover{
+    cursor: pointer;
+}
+
+.fa-smile-o{
+    transition: 500ms;
+    animation: color-change 10s infinite;
+}
+
+@keyframes color-change{
+    0%{
+        color: #05c46b;
+    }
+
+    50%{
+        color: #575fcf;
+    }
+
+    100%{
+        color: #e74c3c;
+    }
+}
+
+.name{
+    transition: 500ms;
+    animation: color-change-name 10s infinite;
+}
+
+@keyframes color-change-name{
+    0%{
+        color: #575fcf;
+    }
+
+    50%{
+        color: #ff5e57;
+    }
+
+    100%{
+        color: #05c46b;
+    }
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .m {
+        margin-top: 10px;
+    }
+
+    .f-2 {
+        font-size: 1rem;
+    }
+
+    .mar {
+        margin-top: 0px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .m {
+        margin-top: 10px;
+    }
+
+    .f-2 {
+        font-size: 1rem;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .m {
+        margin-top: 10px;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .m {
+        margin-top: 40px;
+    }
+
+    .f-2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

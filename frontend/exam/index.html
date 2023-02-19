@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz</title>
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/2759fd8f76.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!--jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar pt-3 shadow pb-3 bg-primary bg-gradient">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="http://drive.google.com/uc?export=view&id=1Yi2VU0BiA9Vfu-EDgEoGerM3JPnCsLre" alt="Logo" width="120" height="40"
+                        class="d-inline-block align-text-top">
+                    
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fliud bg-light bg-gradient">
+            <div class="container">
+                <div class="row pt-3">
+
+                    <div class="col-sm-12 col-md-6 text-center p-3 d-sm-block d-md-none">
+                        <img src="http://drive.google.com/uc?export=view&id=1Ldt-Ttqgpm-XvDexfLX6ivwhBEK91LmA" alt="" class="img-fluid rounded" width="300px">
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 mb-3 mar">
+
+                        <h2 class="d-none d-md-block fs-1">Hello There!</h2>
+                        <h2 class="text-primary fw-bold font-monospace d-md-none">Hello There!</h2>
+
+                        <p class="text-muted">Welcome to My Online Qiuz <i class="fa fa-smile-o" aria-hidden="true"></i>
+                        </p>
+
+                        <hr>
+
+                        <p style="text-align:justify">Each quiz contains 10-15 questions, you get 1 point for each correct answer, at the end of each quiz you get your total score.</p>
+
+                        <p style="text-align:justify">Before attempting the quiz, learn HTML, CSS, JavaScript, Java, SQL, and PHP(optional)</p>
+
+                        <form action="" autocomplete="off">
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <input type="text" name="" id="name" placeholder="Enter your name"
+                                        class="form-control" oninput="myInput()">
+                                    <span id="errorName" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <button type="button" id="userName" class="btn btn-primary">Getting Started!</button>
+                        </form>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 text-center p-3 d-none d-md-block">
+                        <img src="http://drive.google.com/uc?export=view&id=1Ldt-Ttqgpm-XvDexfLX6ivwhBEK91LmA" alt="" class="img-fluid rounded" width="550px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- <footer>
+        <div class="container-fluid bg-dark bg-gradient text-white" style="min-height: 150px;">
+            <div class="container">
+                <div class="row pt-4 d-flex justify-content-between">
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <h1 style="font-size: 1.1rem;" class="pb-2">ABOUT US</h1>
+                        <hr width="60px" style="margin-top: -8px;">
+
+                        <p style="font-size: 0.9rem; text-align:justify; font-weight:400">Energetic, hardworking,
+                            innovative and ambitious person with a great passion for software engineering field.</p>
+                    </div>
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <h1 style="font-size: 1.1rem;" class="pb-2">PROJECTS</h1>
+                        <hr width="60px" style="margin-top: -8px;">
+
+                        <p style="font-size: 0.9rem; text-align:justify; font-weight:400" id="pharmacy">Pharmacy
+                            Management System
+                        </p>
+
+                        <p style="font-size: 0.9rem; text-align:justify; font-weight:400" id="hardy">Web Base Of The
+                            Particular
+                            Institution</p>
+
+                        <p style="font-size: 0.9rem; text-align:justify; font-weight:400" id="nic">Sri Lankan NIC
+                            Calculator</p>
+                    </div>
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <h1 style="font-size: 1.1rem;" class="pb-2">SOCIAL MEDIA</h1>
+                        <hr width="60px" style="margin-top: -8px;">
+
+                        <p>
+                            <a href="https://www.facebook.com/mohammed.asky.9" style="margin-right: 5px;"><img src="Asseets/Images/Social/face.png" alt=""
+                                    width="30px"></a>
+                            <a href="https://www.linkedin.com/in/asky-mohammed-02742921b/"
+                                style="margin-right: 5px;"><img src="Asseets/Images/Social/Link.png" alt=""
+                                    width="30px"></a>
+                            <a href="" style="margin-right: 5px;"><img src="Asseets/Images/Social/whatsapp-.png" alt=""
+                                    width="30px"></a>
+                            <a href="https://www.youtube.com/channel/UC5YJmG0NFNyZaZsvyGcQAWQ" style="margin-right: 5px;"><img src="Asseets/Images/Social/Youtube.png" alt=""
+                                    width="30px"></a>
+                        </p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="pb-4" style="font-size: 0.9rem; text-align:justify; font-weight:300;">Created By <span
+                        class="name">Asky AM</span> | &#169; 2022 All rights reserved.</div>
+            </div>
+        </div>
+    </footer> -->
+
+    <!--JavaScript File-->
+    <script src="Asseets/Js/script.js"></script>
+    <script src="Asseets/Css/bootstrap/js/"></script>
+</body>
+
+</html>
