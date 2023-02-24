@@ -1,0 +1,25 @@
+
+/*statistics download button */
+.statisticsdbtn {
+	background-color: DodgerBlue;
+	border: none;
+	color: white;
+	padding: 12px 30px;
+	cursor: pointer;
+	font-size: 20px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	
+  }
+  .statisticsdbtn:hover {
+	background-color: RoyalBlue;
+  }
+  .m-4 {
+    white-space: nowrap;
+z-index: 5;
+
+  }
+
+
+  /*statistics filters */
+  

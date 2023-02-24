@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="logindetails">
+<div class="login-box" >
+    <h2>Welcome back</h2>
+    <p>Enter your details</p>
+
+    <form  [formGroup]="loginForm" (ngSubmit)='onSumbit()'>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <i class="fa-solid fa-user"></i>
+                <input type="text" id="email" placeholder="id" formControlName="id" required>
+        </div>
+         <div class="form-group">
+            <label for="password">Password</label>
+            <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" placeholder="Your password" formControlName="password" required>
+         </div>
+         <button type="submit" style="background-color:blue; border-color: blue; border-radius: 15%;   color: white; padding: 4%; margin-left: 40%;">Log In</button>
+         <!-- <button type="submit" class="btn btn-primary btn-lg btn-block" style="scale:1.5 width:25%">Log In</button> -->
+    </form>
+    <!-- <div>
+        <a type="sumbit" class="btn">Log In</a>
+        </div> -->
+        <div>
+        <a href="#" class="forgot">
+            Forgot Your Password?
+        </a>
+        </div>
+</div>
+</div>

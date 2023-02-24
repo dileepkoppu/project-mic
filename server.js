@@ -5,6 +5,8 @@ const cors = require("cors")
 const userRoutes = require(appRoot+'/routes/userRoutes')
 const recordRoutes = require(appRoot+'/routes/recordRoutes')
 const studendCRoutes = require(appRoot+'/routes/studendCRoutes')
+const examRoutes = require(appRoot+'/routes/examRoutes')
+const questionRoutes = require(appRoot+'/routes/questionRoutes')
 
 
 
@@ -38,6 +40,10 @@ app.use('',userRoutes.router)
 app.use('',recordRoutes.router)
 
 app.use('',studendCRoutes.router)
+
+app.use('',examRoutes.router)
+
+app.use('',questionRoutes.router)
 
 
 

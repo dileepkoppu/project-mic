@@ -1,0 +1,99 @@
+
+  /* ABOUT GRADUATION IMAGE */
+  .containergraduation {
+	display:flex;
+	
+	padding:10% 10% 0% 10%;
+  }
+  
+  .imagegraduation img {
+	padding-top: 2%;
+	padding-right: 20%;
+	width: 200%;
+	height: 100%;
+	
+  } 
+   
+  .graduationtext {
+	padding-left: 15%;
+	font-size: 15px;
+	
+  }
+  /* ABOUT BGIMG WITH YEXT */
+  .padded-multiline { 
+	background: url(http://drive.google.com/uc?export=view&id=1hQWwjgh2KxKod0Le4D5KvzThrXxLUnho);
+	line-height: 1.4; 
+	padding: 50px 50px 120px 50px;
+	width: 100%;
+	max-height: 100%;
+	margin: 0px auto;
+  }
+  .multiline{
+	padding-left: 10%;
+	padding-right: 10%;
+  }
+  .padded-multiline span { 
+	color: #fff; 
+	display: inline;
+	padding: 0.5rem;
+	
+	/* Needs prefixing */
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+  }
+
+
+  /* tpo information */
+  .staff {
+	float: left;
+	width: 30%;
+	padding-left: 9%;
+
+  }
+  .staff :hover{
+	background-color:darkcyan;
+	background-size: auto;
+	min-zoom: 5%;
+	transform: scale(0.9);
+	border-color:darkcyan ;
+
+  }
+  
+   .tnpinfo{
+	text-align: center;
+  } 
+  .imageinfo::after {
+	content: "";
+	clear: both;
+	display: table;
+	padding-bottom: 4%;
+  }
+  .child{
+	float: left;
+	width: 25%;
+	padding: 2% 1% 2% 2%;
+	box-sizing: border-box;
+	
+ }
+ .child img{
+	width: 80%;
+	border: 5px solid red;
+	border-radius: 15%;
+  }
+  .child img:hover{
+	transform: scale(1.2);
+  }
+  .parent{
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 25%;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 500px) {
+	.column {
+	  width: 100%;
+	}
+  }
+
+ 
