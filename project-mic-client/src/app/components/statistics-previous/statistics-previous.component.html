@@ -1,0 +1,82 @@
+<br>
+<!-- <div class="pt-100" ></div> -->
+
+<div class="input-group mb-3" style="padding-top: 6%; width: 60%; padding-left: 33%;" >
+  <form [formGroup]="fileUplodForm" (ngSubmit)='onSumbit1()' *ngIf="loggedIn">
+    <div class="input-group mb-3">
+      <input type="file" class="form-control"  (change)="file($event)" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-outline-primary" type="submit" id="button-addon2">Button</button>
+    </div>
+  </form>
+</div>
+<form [formGroup]="searchForm" (ngSubmit)='onSumbit()'>
+    <div class="container mx-auto" >
+        <div class="row">
+          <div class="col-sm">
+            <select class="form-select" aria-label="Default select example"  formControlName="cName">
+                <option disabled selected>Company</option>
+                <option *ngFor='let project of CName' value={{project}}>{{project}}</option>
+            </select>
+          </div>
+          <div class="col-sm">
+            <select class="form-select" aria-label="Default select example" formControlName="passOutYear">
+                <option [ngValue]="null" disabled selected>Year</option>
+                <option *ngFor='let project of Year' value={{project}}>{{project}}</option>
+            </select>
+          </div>
+          <div class="col-sm">
+            <select class="form-select" aria-label="Default select example" formControlName="Branch">
+                <option disabled selected>Branch</option>
+                <option *ngFor='let project of Branch' value={{project}}>{{project}}</option>
+            </select>
+          </div>
+          <div class="col-sm">
+            <button class="btn btn-primary" type="submit">search</button>
+            
+         </div>
+        </div>
+    </div>
+</form>
+
+
+  <!--filter-->
+ 
+<!--submit button-->
+
+ <!--table-->
+
+<div class="m-4" style="padding-right: 15%; padding-left: 5%;">
+    <div class="table-responsive"> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Redg no</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>company</th>
+                    <th>year</th>                   
+                </tr>
+            </thead>
+            <tbody *ngFor="let report of records">
+                <tr>
+                    <td>{{report.id}}</td>
+                    <td>{{report.firstName}}, {{report.lastName}}</td>
+                    <td>{{report.Branch}}</td>
+                    <td>{{report.cName}}</td>
+                    <td>{{report.passOutYear}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+    <button type="button" (click)="onSumbitDownload()" class="btn btn-primary" style="margin-left: 90%;" *ngIf="loggedIn"><i class="fa fa-download"></i> Download</button>
+</div>
+
+<!--download button-->
+
+
+
+
+
+
+
+

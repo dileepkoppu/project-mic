@@ -5,7 +5,6 @@ const fs = require('fs');
 
 const pathToPubKey = appRoot+'/id_rsa_pub.pem';
 const PUB_KEY = fs.readFileSync(pathToPubKey, 'utf8');
-// const { Bugreport } = require(appRoot+"/models/bugreportModel")
 
 
 
@@ -15,7 +14,7 @@ const checkauth=(req, res, next)=> {
     if (tokenParts[0] === 'Bearer' && tokenParts[1].match(/\S+\.\S+\.\S+/) !== null) {
       const verification = jsonwebtoken.verify(tokenParts[1], PUB_KEY, { algorithms: ['RS256'] });
       req.jwt = verification;
-      console.log(verification,Date.now(),new Date(verification['iat']),new Date(verification.exp))
+      // console.log(verification,Date.now(),new Date(verification['iat']),new Date(verification.exp))
       next();
     } 
     else{
