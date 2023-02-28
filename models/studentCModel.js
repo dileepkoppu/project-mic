@@ -24,7 +24,7 @@ const user_schema = new schema({
         type:String,
         required:true,
         trim: true,
-        minLength:3
+        minLength:2
     },
     "passOutYear":{
         type:String,

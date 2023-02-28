@@ -27,7 +27,7 @@ createstudentC= async(req,res)=>{
                 cName:record[5],
                 totalRounds:record[6],
                 currentRound:record[7],
-                status:record[8]
+                status:record[8].toLowerCase()
             }
             await studentCModel.updateOne({id:dataTemp.id,cName:dataTemp.cName},{$set:dataTemp},{upsert:true})
         }
