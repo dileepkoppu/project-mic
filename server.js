@@ -9,13 +9,13 @@ const examRoutes = require(appRoot+'/routes/examRoutes')
 const questionRoutes = require(appRoot+'/routes/questionRoutes')
 
 
+require('dotenv').config()
 
-const Port = process.env.PORT||9000
 const app = express()
 
 
-require('dotenv').config()
 
+const Port = process.env.PORT||9000
 const uri = process.env.DB_URL||'mongodb+srv://m001-student:m001-mongodb-basics@sandbox.4mifl.mongodb.net/project-mic?retryWrites=true&w=majority'
 
 // db
@@ -31,8 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
 // app.use(express.static(appRoot+'/public'));
-// app.use('',express.static(appRoot+"/static"))
-// app.use('/upload',express.static(appRoot+'/uploads'));
+
 
 
 app.use('',userRoutes.router)

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import * as moment from 'moment';
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { Router } from "@angular/router";
@@ -29,9 +28,7 @@ export class AuthService {
   constructor(private http:HttpClient,private router:Router) { }
 
   setLocalStorage(responseObj:any) {
-    const expiresAt = moment().add(Number.parseInt(responseObj.expiresIn), 'days');
     localStorage.setItem('id_token', responseObj.token);
-    // localStorage.setItem('username',responseObj.username);
     localStorage.setItem('role',responseObj.role);
     localStorage.setItem("expires_at", responseObj.expiresIn);
   } 
@@ -54,7 +51,7 @@ export class AuthService {
   logout(){
     localStorage.clear()
     this.changeAuthStatus(this.isLoggedIn());
-    this.changeDetails()
+    // this.changeDetails()
     this.router.navigate([''])
   }
 
@@ -62,8 +59,8 @@ export class AuthService {
   isLoggedIn():boolean {
     let role=localStorage.getItem('role')
     if (localStorage.getItem('id_token') && role && localStorage.getItem("expires_at")) {
-      let isRoleValid=role==="admin"||role==="superuser"||role==="tester"||role==="developer"    
-      return moment().isBefore(this.getExpiration(), "second")&&(isRoleValid)
+      let isRoleValid=role==="superuser" 
+      return Date.now()<this.getExpiration()&&(isRoleValid)
     } else {
       return false
     }
@@ -73,24 +70,27 @@ export class AuthService {
   getExpiration() {
     const expiration = localStorage.getItem("expires_at");
     if (expiration) {
-        const expiresAt = JSON.parse(expiration);
-        return moment(expiresAt);
+        return expiration;
     } else {
-        return moment();
+        return Date.now();
     }
-  } 
+  }
+
+  // roleCheck():Boolean {
+  //   const role = localStorage.getItem('role');
+  //   return role==='superuser'
+  // }
+
+
 
   private loggedIn = new BehaviorSubject <boolean>(this.isLoggedIn());
-  private _username = new BehaviorSubject <string|null>(localStorage.getItem('username'));
-  private _role = new BehaviorSubject <string|null>(localStorage.getItem('role'));
+  // private _role = new BehaviorSubject <Boolean>(this.roleCheck());
   authStatus = this.loggedIn.asObservable();
-  behaviorUsername = this._username.asObservable()
-  behaviorRole = this._role.asObservable()
+  // behaviorRole = this._role.asObservable();
   changeAuthStatus(value : boolean){
          this.loggedIn.next(value)
   }
-  changeDetails(username:string="",role:string=""){
-    this._username.next(username)
-    this._role.next(role)
-  }
+  // changeDetails(role:Boolean=""){
+  //   this._role.next(role)
+  // }
 }

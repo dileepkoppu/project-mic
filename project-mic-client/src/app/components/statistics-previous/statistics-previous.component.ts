@@ -24,7 +24,7 @@ interface recordInterface{
 export class StatisticsPreviousComponent {
 
     public loggedIn: boolean = false;
-    role!:boolean|null
+    // role:Boolean=false
 
     records:recordInterface[]=[]
     Year!:string[]
@@ -50,11 +50,8 @@ export class StatisticsPreviousComponent {
   
     ngOnInit(): void {
 
-      this.auth.authStatus.subscribe(value =>{ 
-        this.loggedIn = value
-        console.log(value);
-      });
-      this.auth.behaviorRole.subscribe(value => this.role =value==="superuser");
+      this.auth.authStatus.subscribe(value =>{this.loggedIn = value});
+      // this.auth.behaviorRole.subscribe(value => this.role =value);
 
       this.StatisticsPrevious.StatisticsPreviouslist()
                               .subscribe((data)=>{
@@ -62,8 +59,12 @@ export class StatisticsPreviousComponent {
                                 console.log(data)
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
       this.StatisticsPrevious.StatisticsPreviousYear()
                               .subscribe((data)=>{
@@ -71,8 +72,12 @@ export class StatisticsPreviousComponent {
                                 console.log(data)
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
       this.StatisticsPrevious.StatisticsPreviousCName()
                               .subscribe((data)=>{
@@ -80,8 +85,12 @@ export class StatisticsPreviousComponent {
                                 console.log(data)
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
       this.StatisticsPrevious.StatisticsPreviousBranch()
                               .subscribe((data)=>{
@@ -90,8 +99,12 @@ export class StatisticsPreviousComponent {
                                 
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
     }
     onSumbit(){
@@ -102,8 +115,12 @@ export class StatisticsPreviousComponent {
                                 console.log(data)
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
     }
 
@@ -117,8 +134,12 @@ export class StatisticsPreviousComponent {
                                 this.router.navigate(['StatisticsPrevious/'])
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
     }
 
@@ -138,8 +159,12 @@ export class StatisticsPreviousComponent {
                                 saveAs(blob, 'employees.csv');
                               },
                               (error: any)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
     }
 

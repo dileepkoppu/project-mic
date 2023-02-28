@@ -3,17 +3,15 @@ const router = require("express").Router()
 
 
 
-const {createQuestion} = require(appRoot+"/apps/v1/common/question.js")
+const {createQuestion,questionDetails,checkAns} = require(appRoot+"/apps/v1/common/question.js")
 const {checkauth} =require(appRoot+"/routes/middleware")
 
 
 
 router.post("/question-create/:id",checkauth,createQuestion)
-// router.get("/studentP-download",checkauth,download)
-// router.get('/studentP-List',recordList)
-// router.get('/studentP-List/distinctYear',distinctYear)
-// router.get('/studentP-List/distinctBranch',distinctBranch)
-// router.get('/studentP-List/distinctcName',distinctcName)
+router.get("/question-details/:q_c",questionDetails)
+router.post("/check-ans/:e_s/:q_c",checkAns)
+
 
 
 module.exports.router = router

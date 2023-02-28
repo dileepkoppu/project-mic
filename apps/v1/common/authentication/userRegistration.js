@@ -61,10 +61,8 @@ createUser=async(req,res)=>{
 
 login = async(req, res, next)=>{
     try {
-        console.log(req.body);
         Usermodel.findOne({id:req.body.id},{_id:1,email:1,id:1,hash:1,salt:1,role_ids:1})
                 .then((user) => {
-                    console.log(user);
                     if (!user) {
                         res.status(401).json({success: false,  "message": "ID is invalid" });
                     }else{
@@ -79,7 +77,7 @@ login = async(req, res, next)=>{
                     }}
                 })
                 .catch((err) => {
-                     res.status(401).json({ success: false,  "message": "you entered the wrong Email Id",err:err});
+                     res.status(401).json({ success: false,  "message": "you entered the wrong Id"});
                 });
     }catch (error) {
          res.status(401).json({ success: false,  "message": "Something when wrong please try again" });

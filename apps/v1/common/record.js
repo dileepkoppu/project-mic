@@ -19,11 +19,11 @@ createRecord= async(req,res)=>{
         fs.rmSync(file.path)
         await recordModel.insertMany(result)
         recordModel.find()
-                .then((report)=>{
-                                  res.status(200).send({success:true,data:report})
+                .then((records)=>{
+                                  res.status(200).send({success:true,data:records})
                                 })
                                 .catch((error)=>{
-                                  res.status(500).send({success:false,"message":error})
+                                  res.status(500).send({success:false,"message":"something went wrong please try again"})
                                 })
                               })
     }else{
@@ -57,9 +57,7 @@ recordDownload = async(req,res)=>{
           console.log("Write to fs.csv successfully!");
       });
       res.status(200).download(appRoot+"/uploads/users.csv","data.csv")
-      console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
       fs.rm(appRoot+"/uploads/users.csv",(err)=>{console.log(err);})
-      console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
     } else {
       res.status(403).send({success: false,"message":"You are not authorized to visit this route"})
     }
@@ -77,7 +75,6 @@ recordList = async(req,res)=>{
           query[key]=req.query[key]
         }
       }
-      console.log(query);
       recordModel.find(query)
                   .then((data)=>{
                               res.status(200).send({success: true,data:data})   

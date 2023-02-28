@@ -31,8 +31,13 @@ const examS_schema = new schema({
         type:Number,
         required:true,
         trim: true,
+    },
+    "totalNoOfQ":{
+        type:Number,
+        required:true,
+        trim: true,
     }
 })
 
-examS=mongoose.model('ExamS',examS_schema)
+examS=mongoose.model('Test',examS_schema)
 module.exports = examS

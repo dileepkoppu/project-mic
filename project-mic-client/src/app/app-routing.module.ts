@@ -10,6 +10,12 @@ import { StatisticsCurrentComponent } from './components/statistics-current/stat
 import { StatisticsPreviousComponent } from './components/statistics-previous/statistics-previous.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ExamStartComponent } from './components/exam-start/exam-start.component';
+import { ExamListComponent } from './components/exam-list/exam-list.component';
+import { CreateExamComponent } from './components/create-exam/create-exam.component';
+import { CreateQuestionComponent } from './components/create-question/create-question.component';
+import { QuestionComponent } from './components/question/question.component';
+import { ResultComponent } from './components/result/result.component';
+
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -18,7 +24,13 @@ const routes: Routes = [
   {path:"StatisticsCurrent",component:StatisticsCurrentComponent},
   {path:"StatisticsPrevious",component:StatisticsPreviousComponent},
   {path:"create-user",component:CreateUserComponent},
-  {path:"exam-start",component:ExamStartComponent},
+  {path:"create-exam",component:CreateExamComponent},
+  {path:"exam-list",component:ExamListComponent},
+  {path:"exam-list/:id",component:ExamStartComponent},
+  {path:"exam-list/:id/:q_s/:q_id",component:QuestionComponent},
+  {path:"exam-list/:id/addquestion",component:CreateQuestionComponent},
+  {path:"result/:exam_session",component:ResultComponent},
+  { path: '**', redirectTo: '/'},
 ];
 
 @NgModule({

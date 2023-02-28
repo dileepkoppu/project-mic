@@ -24,7 +24,7 @@ interface recordInterface{
 })
 export class StatisticsCurrentComponent {
   public loggedIn: boolean = false;
-    role!:boolean|null
+  // public  role:Boolean= false;
 
     records:recordInterface[]=[]
     Year!:string[]
@@ -50,10 +50,8 @@ export class StatisticsCurrentComponent {
     ngOnInit(): void {
 
       this.auth.authStatus.subscribe(value =>{ 
-        this.loggedIn = value
-        console.log(value);
-      });
-      this.auth.behaviorRole.subscribe(value => this.role =value==="superuser");
+        this.loggedIn = value});
+      // this.auth.behaviorRole.subscribe(value => this.role =value);
 
       this.StatisticsCurrent.StatisticsCurrentlist()
                               .subscribe((data)=>{
@@ -61,8 +59,12 @@ export class StatisticsCurrentComponent {
                                 console.log(data)
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
       this.StatisticsCurrent.StatisticsCurrentYear()
                               .subscribe((data)=>{
@@ -70,8 +72,12 @@ export class StatisticsCurrentComponent {
                                 console.log(data)
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
       this.StatisticsCurrent.StatisticsCurrentCName()
                               .subscribe((data)=>{
@@ -79,8 +85,12 @@ export class StatisticsCurrentComponent {
                                 console.log(data)
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
       this.StatisticsCurrent.StatisticsCurrentBranch()
                               .subscribe((data)=>{
@@ -89,8 +99,12 @@ export class StatisticsCurrentComponent {
                                 
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
     }
     onSumbit(){
@@ -101,8 +115,12 @@ export class StatisticsCurrentComponent {
                                 console.log(data)
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
     }
 
@@ -116,8 +134,12 @@ export class StatisticsCurrentComponent {
                                 this.router.navigate(['StatisticsCurrent/'])
                               },
                               (error)=>{
-                                console.log(error);
-                                // this.router.navigate([''],{state:{alert:true,success:error.success,message:error.message}})
+                                if (error.error.message) {
+                                  alert(error.error.message)
+                                } else {
+                                 alert("something went wrong please try again") 
+                                }
+                                this.router.navigate([''])
                               })
 
 }

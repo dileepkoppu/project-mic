@@ -1,0 +1,25 @@
+<div class="container" id="scor" style="padding-top: 7%;">
+    <div class="row d-flex justify-content-center">
+        <div class="col col-md-6">
+            <div class="card mb-3">
+                <div class="card-header fs-2">
+                    Result:
+                </div>
+                <div class="card-body text-center">
+                    <img src="http://drive.google.com/uc?export=view&id=1VnBEi2Khri-D1VzyPwBp9sv-323fmcZO" alt="" class="img-fluid" width="300px" id="success-img">
+                    <div class="fs-4"><span id="score"></span>{{record.score}} of {{record.totalNoOfQ}}</div>
+
+                    <div class="fs-5"><span id="avg"></span>{{record.score/record.totalNoOfQ*100|number :'1.0-2'}} %</div>
+
+                    <div class="fs-5"><span id="mes"></span></div>
+                </div>
+                <div class="card-footer">
+                    <div class="row ">
+                        <div class="col-12 col-lg-3 mb-2"><a  class="btn btn-primary" [routerLink]="['/exam-list',record.exam_id]" >Try Again</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

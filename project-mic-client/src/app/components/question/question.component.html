@@ -1,0 +1,57 @@
+<div class="card mb-3" style="padding-top: 10%;">
+    <div class="card-header">
+        Question <span class="total-quiz">{{qn.length}}</span>
+    </div>
+    <div class="card-body">
+        <h6 class="card-title">{{record.question}}</h6>
+
+        <form [formGroup]="questionForm" (ngSubmit)='onSubmit()'>
+            <div>
+                <div class="shadow-none p-3 mb-1 bg-light rounded">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="ans-1" formControlName="opt" value={{record.options[0]}}>
+                        <label class="form-check-label w-100 m-hover" for="ans-1">
+                            {{record.options[0]}}
+                        </label>
+                    </div>
+                </div>
+            </div> 
+            <div>
+                <div class="shadow-none p-3 mb-1 bg-light rounded">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="ans-2" formControlName="opt" value={{record.options[1]}}>
+                        <label class="form-check-label w-100 m-hover" for="ans-2">
+                            {{record.options[1]}}
+                        </label>
+                    </div>
+                </div>
+            </div> 
+            <div>
+                <div class="shadow-none p-3 mb-1 bg-light rounded">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="ans-3" formControlName="opt" value={{record.options[2]}}>
+                        <label class="form-check-label w-100 m-hover" for="ans-3">
+                            {{record.options[2]}}  
+                        </label>
+                    </div>
+                </div>
+            </div> 
+            <div>
+                <div class="shadow-none p-3 mb-1 bg-light rounded">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="ans-4" formControlName="opt" value={{record.options[3]}}>
+                        <label class="form-check-label w-100 m-hover" for="ans-4">
+                            {{record.options[3]}}
+                        </label>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="card-footer text-end">
+                <button type="submit" class="btn btn-success" id="ans-btn-2">Next Quiz<span style="margin-left: 5px;"><i
+                            class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+            </div>
+
+        </form>
+    </div>
+</div>

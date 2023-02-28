@@ -1,0 +1,59 @@
+<div class="container-fliud bg-light bg-gradient" style="padding-top: 6%;">
+    <main>
+        <div class="container mt-3 ">
+            <p class="h5 f-2 fw-bold">Hello <span id="uName" class="uName"></span> Test Your Skills With These
+                Quizzes.</p>
+            <a [routerLink]="['/create-exam']" class="btn btn-primary" *ngIf="loggedIn">Create Test</a>
+            <hr>
+            <div class="row">
+                <div class="col-12 d-sm-block d-md-none col-md-4">
+                    <div class="text-center">
+                        <img src="http://drive.google.com/uc?export=view&id=1CxbH3n0m82lfT7P77_POWL1-1lJKH9XG" alt="" class="img-fluid" width="250px">
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 m">
+                    <p class="h5 f-2 text-primary fw-bold font-monospace d-none d-md-block">The Quiz</p>
+                    <p class="h5 f-2 text-primary fw-bold font-monospace d-md-none">The Quiz</p>
+
+                    <p style="text-align:justify">Each quiz contains 10-15 questions, you get 1 point for each
+                        correct
+                        answer, at the end of each quiz
+                        you get your total score.</p>
+
+                    <p style="text-align:justify">When you finish the quiz, you can go through each question with
+                        the
+                        correct answer.</p>
+                </div>
+
+                <div class="col-12 col-md-4 d-none d-md-block">
+                    <div class="text-center">
+                        <img src="http://drive.google.com/uc?export=view&id=1CxbH3n0m82lfT7P77_POWL1-1lJKH9XG" alt="" class="img-fluid" width="250px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5" >
+            <div class="row">
+                <!--HTML Quiz-->
+                <div class="col-12 col-md-6 col-lg-3 mb-4" *ngFor="let record of records">
+                    <div class="card bg-light bg-gradient">
+                        <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202106/tcs_logo_1200_020621101143.jpg?size=948:533" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{record.cName}}</h5>
+                            <p class="card-text">{{record.title}}</p>
+                            <p class="card-text">Good luck! <i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                            <div class="row mx-md-n5">
+                                <a [routerLink]="[record._id]" class="btn btn-primary col" *ngIf="!loggedIn">Start Test</a>
+                                <a [routerLink]="[record._id,'addquestion']" class="btn btn-primary  col px-md-2" *ngIf="loggedIn">Add Question</a>
+                                <div style="padding-left: 2%;"></div>
+                                <button type='submit'(click)="deleteExam(record._id)" class="btn btn-primary  col px-md-2" *ngIf="loggedIn">
+                                    delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

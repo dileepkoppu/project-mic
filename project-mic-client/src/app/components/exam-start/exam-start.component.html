@@ -1,35 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Quiz</title> -->
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <!-- <link rel="stylesheet" href="bootstrap.min.css">
-
-    Font Awesome
-    <script src="https://kit.fontawesome.com/2759fd8f76.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css">
-jQuery CDN-->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-</head>
-
-<body> --> -->
-    <!-- <header>
-        <nav class="navbar pt-3 shadow pb-3 bg-primary bg-gradient">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="http://drive.google.com/uc?export=view&id=1Yi2VU0BiA9Vfu-EDgEoGerM3JPnCsLre" alt="Logo" width="120" height="40"
-                        class="d-inline-block align-text-top">
-                    
-                </a>
-            </div>
-        </nav>
-    </header> -->
 <div style="padding-top: 6%;">
     <main>
         <div class="container-fliud bg-light bg-gradient">
@@ -50,20 +18,19 @@ jQuery CDN-->
 
                         <hr>
 
-                        <p style="text-align:justify">Each quiz contains 10-15 questions, you get 1 point for each correct answer, at the end of each quiz you get your total score.</p>
+                        <p style="text-align:justify">Each quiz contains 10-15 questions, you get 1 point for each correct answer, at the end of each quiz you get your total score.Before attempting the quiz, learn HTML, CSS, JavaScript, Java, SQL, and PHP(optional)</p>
 
-                        <p style="text-align:justify">Before attempting the quiz, learn HTML, CSS, JavaScript, Java, SQL, and PHP(optional)</p>
+                        <p style="text-align:justify">{{record.description}}</p>
 
-                        <form action="" autocomplete="off">
+                        <form [formGroup]="startExamForm" autocomplete="off" (ngSubmit)='onSubmit()'>
                             <div class="row mb-3">
                                 <div class="col-12">
-                                    <input type="text" name="" id="name" placeholder="Enter your name"
-                                        class="form-control" oninput="myInput()">
+                                    <input type="text" id="name" placeholder="Enter your name" class="form-control" formControlName="name" >
                                     <span id="errorName" class="text-danger"></span>
                                 </div>
                             </div>
 
-                            <button type="button" id="userName" class="btn btn-primary">Getting Started!</button>
+                            <button type="submit"  class="btn btn-primary">Getting Started!</button>
                         </form>
                     </div>
 
@@ -77,6 +44,5 @@ jQuery CDN-->
 </div>
 
 
-    <!-- JavaScript File -->
-    <!-- <script src="Asseets/Js/script.js"></script>
-    <script src="Asseets/Css/bootstrap/js/"></script> -->
+
+ 

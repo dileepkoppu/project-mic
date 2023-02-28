@@ -1,0 +1,34 @@
+<div style="padding-left:20%;padding-right:20%;padding-top: 6%;padding-bottom: 4%;">
+    <div class="login-box" >
+        <h2>Create Question</h2>
+        <p>Enter your details</p>
+    
+        <form  [formGroup]="createQuestionForm" (ngSubmit)='onSubmit()'>
+            <div class="mb-3">
+                <label for="formGroupQuestion" class="form-label">Question</label>
+                <textarea  class="form-control" id="formGroupQuestion" placeholder="Question ......." formControlName="question" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="formGroupOption1" class="form-label">Option1</label>
+                <input type="text" class="form-control" id="formGroupOption1" placeholder="Option1" formControlName="opt1" required>
+              </div>
+            <div class="mb-3">
+                <label for="formGroupOption2" class="form-label">Option2</label>
+                <input type="text" class="form-control" id="formGroupOption2" placeholder="Option2" formControlName="opt2"required>
+              </div>
+            <div class="mb-3">
+                <label for="formGroupOption3" class="form-label">Option3</label>
+                <input type="text" class="form-control" id="formGroupOption3" placeholder="Option3" formControlName="opt3"required>
+              </div>
+            <div class="mb-3">
+                <label for="formGroupOption4" class="form-label">Option4</label>
+                <input type="text" class="form-control" id="formGroupOption4" placeholder="Option4" formControlName="opt4"required>
+              </div>
+            <div class="mb-3">
+                <label for="formGroupAnswer" class="form-label">Answer</label>
+                <input type="text" class="form-control" id="formGroupAnswer" placeholder="Answer" formControlName="Ans"required>
+              </div>
+             <button type="submit" class="btn btn-primary btn-lg float-end">Sumbit</button>
+        </form>
+    </div>
+</div>

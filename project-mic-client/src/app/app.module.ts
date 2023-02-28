@@ -15,6 +15,12 @@ import { AboutComponent } from './components/about/about.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ExamStartComponent } from './components/exam-start/exam-start.component';
+import { ExamListComponent } from './components/exam-list/exam-list.component';
+import { CreateExamComponent } from './components/create-exam/create-exam.component';
+import { CreateQuestionComponent } from './components/create-question/create-question.component';
+import { QuestionComponent } from './components/question/question.component';
+import { ResultComponent } from './components/result/result.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +33,12 @@ import { ExamStartComponent } from './components/exam-start/exam-start.component
     StatisticsPreviousComponent,
     AboutComponent,
     CreateUserComponent,
-    ExamStartComponent
+    ExamStartComponent,
+    ExamListComponent,
+    CreateExamComponent,
+    CreateQuestionComponent,
+    QuestionComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'app/services/auth.service';
 
-
-import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: 'app-navbar',
@@ -10,17 +9,13 @@ import { AuthService } from "../../services/auth.service";
 })
 export class NavbarComponent implements OnInit {
   public loggedIn: boolean = false;
-  role!:boolean|null
+  // public role:Boolean =false;
 
   constructor(private auth:AuthService) { }
 
   ngOnInit(): void {
-    this.auth.authStatus.subscribe(value =>{ 
-      this.loggedIn = value
-      console.log(value);
-      
-    });
-    this.auth.behaviorRole.subscribe(value => this.role = value==="admin"||value==="superuser");
+    this.auth.authStatus.subscribe(value =>{ this.loggedIn = value});
+    // this.auth.behaviorRole.subscribe(value => this.role = value);
   }
   logout(){ 
     this.auth.logout()

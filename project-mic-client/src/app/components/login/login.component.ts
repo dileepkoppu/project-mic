@@ -39,11 +39,12 @@ export class LoginComponent implements OnInit {
                                         this.router.navigate([''])
                                       },
                                       (error)=>{
-                                        // this.alert=!!error.error.message
-                                        // this.success= error.error.success
-                                        // this.message=error.error.message
-                                        console.log(error);
-                                        
+                                        if (error.error.message) {
+                                          alert(error.error.message)
+                                        } else {
+                                         alert("something went wrong please try again") 
+                                        }
+                                        this.router.navigate([''])
                                       }
                                       )
   } 
