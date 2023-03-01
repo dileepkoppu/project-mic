@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:"create-exam",component:CreateExamComponent},
   {path:"exam-list",component:ExamListComponent},
   {path:"exam-list/:id",component:ExamStartComponent},
-  {path:"exam-list/:id/:q_s/:q_id",component:QuestionComponent},
+  {path:"exam-list/:id/:q_s/:q_id/question",component:QuestionComponent},
   {path:"exam-list/:id/addquestion",component:CreateQuestionComponent},
   {path:"result/:exam_session",component:ResultComponent},
   { path: '**', redirectTo: '/'},

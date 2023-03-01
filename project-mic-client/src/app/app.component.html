@@ -1,5 +1,6 @@
-<app-navbar></app-navbar>
+<ng-container *ngIf="isShow"><app-navbar ></app-navbar></ng-container>
+
 <!-- <app-alert-message [alert]='alert' [success]='success' [message]="title"></app-alert-message> -->
 <router-outlet></router-outlet>
 <!-- <app-about></app-about> -->
-<app-footer></app-footer>
+<app-footer *ngIf="isShow"></app-footer>

@@ -43,7 +43,7 @@ export class ExamStartComponent implements OnInit{
     this.exam.startExam(this.activatedRoute.snapshot.params['id'],this.startExamForm.value)
                                                                   .subscribe((data)=>{
                                                                     localStorage.setItem("qn","1")
-                                                                    this.router.navigate(["/exam-list/",this.activatedRoute.snapshot.params['id'],data.data['id'],data.data['q_c']])
+                                                                    this.router.navigate(["/exam-list/",this.activatedRoute.snapshot.params['id'],data.data['id'],data.data['q_c'],'question'])
                                                                   },
                                                                   (error)=>{
                                                                     if (error.error.message) {
